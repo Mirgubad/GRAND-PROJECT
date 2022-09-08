@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="./dashboarbooks.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+        integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href='https://css.gg/close.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./dashboarduser.js" defer></script>
+    <link rel="stylesheet" href=".//styles/style.css" />
+    <title>ADMIN PANEL</title>
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <div class="dashboard-books-main">
+            <!-- Navigation Start -->
+            <header class="header">
+                <nav class="navbar_container">
+                    <ul class="nav_list">
+                        <li class="nav_items"><a href="./authors.html">Authors</a></li>
+                        <li class="nav_items"><a href="./books.html">Books</a></li>
+                        <li class="d" id="dashboard"><a href="./dashboard.html">Dashboard </a></li>
+                        <a href="./index.html" id="imagenav"> <img id="navimg" src="./images/logonav.png" alt=""></a>
+
+                    </ul>
+                    <i id="signin-btn" class="fa fa-user-o" aria-hidden="true"></i>
+                    </i><i id="signin-btn" class="fa fa-log-out"></i>
+                    <i id="sign-out-btn" class="fa fa-sign-out" aria-hidden="true"></i>
+                </nav>
+                <nav class="mobile_navbar_container">
+                    <ul class="mobile_navbar_list">
+                        <li class="mobile_nav_items">
+                            <a class="menu_button" onclick="openMenu(this)">
+                                <div class="line1"></div>
+                                <div class="line2"></div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+                <div class="expansionMenu">
+                    <div class="searchBar_Container">
+                    </div>
+                    <div class="mobile_item_menu_container">
+                        <ul class="mobile_item_menu">
+
+                            <li class="mobile_menu_items">
+                                <a href="./authors.html" class="mobile_menu_item_links">Authors</a>
+                            </li>
+                            <li class="mobile_menu_items">
+                                <a href="./books.html" class="mobile_menu_item_links">Books</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div id="book-container">
+
+                <h1 id="title">Book Form</h1>
+                <br>
+                <form id="book-add-form">
+                    <i id="book-form-closer" class="fa fa-times" aria-hidden="true"></i>
+                    <div id="input-design-add-book">
+
+                        <div class="input-book-add-design">
+                            <label for="name" id="title-label"><strong>Title</strong></label>
+                            <input type="text" id="add-book-title" name="name" placeholder="Enter Title"
+                                class="input-book-add" required />
+                        </div>
+
+                        <div class="input-book-add-design">
+                            <label for="lname" id="price-label"><strong>Price</strong></label>
+                            <input type="text" id="add-book-price" name="lname" placeholder="Enter Price"
+                                class="input-book-add" required />
+                        </div>
+
+                        <div class="input-book-add-design">
+                            <label for="lname" id="sold-label"><strong>Sold</strong></label>
+                            <input type="text" id="add-book-sold" name="lname" placeholder="Enter Sold pieces"
+                                class="input-book-add" required />
+                        </div>
+
+                        <div class="input-book-add-design">
+                            <label for="lname" id="author-label"><strong>Author</strong></label>
+                            <input type="text" id="add-book-author-name" name="lname" placeholder="Enter Author name"
+                                class="input-book-add" required />
+                        </div>
+
+                        <div class="input-book-add-design">
+                            <label for="lname" id="name-label"><strong>Photo Link</strong></label>
+                            <input type="text" id="add-book-photo-link" name="lname" placeholder="Photo Link"
+                                class="input-book-add" required />
+                        </div>
+                        <div class="input-book-add-design">
+                            <label for="lname" id="name-label"><strong>Publisher</strong></label>
+                            <input type="text" id="add-book-publisher" name="lname" placeholder="Enter Publsiher name"
+                                class="input-book-add" required />
+                        </div>
+
+                        <div class="input-book-add-design">
+                            <label for="lname" id="name-label"><strong>Publish Date</strong></label>
+                            <input type="text" id="add-book-publish-date" name="lname" placeholder="Publish Day"
+                                class="input-book-add" required />
+                        </div>
+                        <div id="radio-input-book-add-design">
+                            <label>Cover Type</label><br>
+                            <label for="hard" id="cover-label1"><strong>Hard</strong></label>
+                            <input type="radio" id="hard" name="covertype" class="input-book-add" />
+                            <label for="soft" id="cover-label2"><strong>Soft</strong></label>
+                            <input type="radio" id="soft" name="covertype" placeholder="Enter Author name"
+                                class="input-book-add" />
+                        </div>
+
+                    </div>
+
+
+
+                    <div id="checkbox-design">
+                        <p id="genre-header">Genres</p>
+                        <div><label for="historical">Historical</label>
+                            <input type="checkbox" id="historical" name="genre" class="input-move">
+                        </div>
+                        <div><label for="horror">Horror</label>
+                            <input type="checkbox" id="horror" name="genre" class="input-move">
+                        </div>
+                        <div> <label for="literacy-fiction">Literary Fiction</label>
+                            <input type="checkbox" id="literacy-fiction" name="genre" class="input-move">
+                        </div>
+                        <div> <label for="mystery">Mystery</label>
+                            <input type="checkbox" id="mystery" name="genre" class="input-move">
+                        </div>
+                        <div> <label for="thriller">Thriller</label>
+                            <input type="checkbox" id="thriller" name="genre" class="input-move">
+                        </div>
+                        <div><label for="romance">Romance</label>
+                            <input type="checkbox" id="romance" name="genre" class="input-move">
+                        </div>
+                        <div><label for="western">Western</label>
+                            <input type="checkbox" id="western" name="genre" class="input-move">
+                        </div>
+                        <div> <label for="bildungsroman">Bildungsroman</label>
+                            <input type="checkbox" id="bildungsroman" name="genre" class="input-move">
+                        </div>
+                        <div> <label for="speculative-fiction">Speculative Fiction</label>
+                            <input type="checkbox" id="speculative-fiction" name="genre" class="input-move">
+                        </div>
+                        <div><label for="science-fiction">Science Fiction</label>
+                            <input type="checkbox" id="science-fiction" name="genre" class="input-move">
+                        </div>
+                        <div> <label for="fantasy">Fantasy</label>
+                            <input type="checkbox" id="fantasy" name="genre" class="input-move">
+                        </div>
+                        <div> <label for="dystopian">Dystopian</label>
+                            <input type="checkbox" id="dystopian" name="genre" class="input-move">
+                        </div>
+                        <div><label for="magical-realism">Magical Realism</label>
+                            <input type="checkbox" id="magical-realism" name="genre" class="input-move">
+                        </div>
+                        <div> <label for="biography">Biography</label>
+                            <input type="checkbox" id="biography" name="genre" class="input-move">
+                        </div>
+                        <div> <label for="royalty">Royalty</label>
+                            <input type="checkbox" id="royalty" name="genre" class="input-move">
+                        </div>
+                        <div> <label for="history">History</label>
+                            <input type="checkbox" id="history" name="genre" class="input-move">
+                        </div>
+                        <div> <label for="realist-literature">Realist Literature</label>
+                            <input type="checkbox" id="realist-literature" name="genre" class="input-move">
+                        </div>
+                        <div> <label for="drama">Drama</label>
+                            <input type="checkbox" id="drama" name="genre" class="input-move">
+                        </div>
+                        <div> <label for="animal-stories">Animal Stories</label>
+                            <input type="checkbox" id="animal-stories" name="genre" class="input-move">
+                        </div>
+                    </div>
+
+
+
+                    <!--Button to submit information-->
+
+
+                </form>
+                <div class="textarea-book-add-design">
+                    <label for="synopsis">Synopsis</label>
+                    <textarea id="book-synopsis" name="synopsis" placeholder="Enter synopsis here..."
+                        class="input-book-add"></textarea>
+                </div>
+                <button type="submit" id="submit-new-book" value="submit">Submit</button>
+            </div>
+
+
+
+
+            <!-- Navigation bar end -->
+            <div class="dashboard-books-main-container">
+                <a href="./dashboard.html" id="dashboardchoose">Authors</a>
+                <a href="./dashboarduser.html" id="dashboardchoose">Users</a>
+
+                <div id="dashboardbooks-table" class="dashboardbooks-items">
+                    <button id="dashtable-add-book-btn">Add</button><br><br>
+                    <h2> <a href="#" id="dashboardchoose">Books</a></h2>
+                    <table border="3">
+                        <thead>
+                            <tr>
+
+                                <td>#id</td>
+                                <td>Photo</td>
+                                <td>Title</td>
+                                <td>Author</td>
+                                <td>Publish Day</td>
+                                <td>Genre</td>
+                                <td>Book Cover</td>
+                                <td>Publisher</td>
+                                <td>Price</td>
+                                <td>Sold</td>
+                                <td>Actions</td>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="dash-books-table-body">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="login-menu" class="form-structor">
+        <i id="logclose-btn" onclick="closeLoginMenu()" class="gg-close"></i>
+        <div class="signup">
+            <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
+            <div class="form-holder">
+                <form id="user-form-signup">
+                    <input type="text" class="input" placeholder="Name" />
+                    <input type="email" class="input" placeholder="Email" />
+                    <input type="password" class="input" placeholder="Password" />
+                </form>
+
+            </div>
+            <button id="signbtn-sbmt" class="submit-btn">Sign up</button>
+        </div>
+        <div class="login slide-up">
+            <div class="center">
+                <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+                <div class="form-holder">
+                    <form id="user-form-login">
+                        <input id="mail" type="email" class="input" placeholder="Email" />
+                        <input id="pass" type="password" class="input" placeholder="Password" />
+                    </form>
+
+                </div>
+                <button type="submit" id="login-sbmt-btn" class="submit-btn">Log in</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+<!--Footer-->
+<footer>
+
+    <div id="dashboard-footer" class="footer-items">
+        <div class="footer-social-media">
+            <p>Social Media</p>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-twitter"></a>
+        </div>
+        <div class="footer-about-us">
+            <p>Information</p>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Meet With us</a>
+        </div>
+        <div class="footer-locations">
+            <p>Locations</p>
+            <a href="#">Baku,AFF Business house</a>
+            <a href="#">Baku,Ganjlik Mall</a>
+            <a href="#">Baku,Azadliq prospekti 45a</a>
+        </div>
+    </div>
+    <hr>
+    <p class="all-rights">All rights reserved by SomeOne &#169;</p>
+</footer>
+<!--Footer End-->
+
+</html>

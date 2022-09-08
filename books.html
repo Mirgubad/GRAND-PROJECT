@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/style.css">
+  <script src="./books.js" defer></script>
+  <link href='https://css.gg/close.css' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+    integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <title>BOOKS</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="loader-books-page">
+      <div class="inner one"></div>
+      <div class="inner two"></div>
+      <div class="inner three"></div>
+    </div>
+
+    <!-- Navigation Start -->
+    <header class="header">
+      <nav class="navbar_container">
+        <ul id="dashafter" class="nav_list">
+
+          <li class="nav_items"><a href="./authors.html">Authors</a></li>
+          <li class="nav_items"><a href="#">Books</a></li>
+
+          <a href="./index.html" id="imagenav"> <img id="navimg" src="./images/logonav.png" alt=""></a>
+
+        </ul>
+        <i id="signin-btn" class="fa fa-user-o" aria-hidden="true"></i>
+        </i><i id="signin-btn" class="fa fa-log-out"></i>
+        <i id="sign-out-btn" class="fa fa-sign-out" aria-hidden="true"></i>
+      </nav>
+      <nav class="mobile_navbar_container">
+        <ul class="mobile_navbar_list">
+          <li class="mobile_nav_items">
+            <a class="menu_button" onclick="openMenu(this)">
+              <div class="line1"></div>
+              <div class="line2"></div>
+            </a>
+          </li>
+
+          </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="expansionMenu">
+        <div class="searchBar_Container">
+        </div>
+        <div class="mobile_item_menu_container">
+          <ul class="mobile_item_menu">
+
+            <li class="mobile_menu_items">
+
+              <a href="./authors.html" class="mobile_menu_item_links">Authors</a>
+            </li>
+            <li class="mobile_menu_items">
+              <a href="./books.html" class="mobile_menu_item_links">Books</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation bar end -->
+
+
+    <div class="books-main">
+
+      <div id="login-menu" class="form-structor">
+        <i id="logclose-btn" onclick="closeLoginMenu()" class="gg-close"></i>
+        <div class="signup">
+          <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
+          <div class="form-holder">
+            <form id="user-form-signup">
+              <input type="text" class="input" placeholder="Name" />
+              <input type="email" class="input" placeholder="Email" />
+              <input type="password" class="input" placeholder="Password" />
+            </form>
+
+          </div>
+          <button id="signbtn-sbmt" class="submit-btn">Sign up</button>
+        </div>
+        <div class="login slide-up">
+          <div class="center">
+            <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+            <div class="form-holder">
+              <form id="user-form-login">
+                <input id="mail" type="email" class="input" placeholder="Email" />
+                <input id="pass" type="password" class="input" placeholder="Password" />
+              </form>
+
+            </div>
+            <button type="submit" id="login-sbmt-btn" class="submit-btn">Log in</button>
+          </div>
+        </div>
+      </div>
+      <p id="books-header">Books</p>
+
+      <div class="books-main-container">
+
+        <div id="books-container" class="cover">
+
+          <!-- <button onclick="changePageLeft()" id="changebtnleft"></button>
+          <button onclick="changePageRight()" id="changebtnright"></button>
+
+          <div class="book">
+            <label for="page-1" class="book__page book__page--1">
+              <img src="${book.imageUrl}" alt="img">
+            </label>
+
+            <label for="page-2" class="book__page book__page--4">
+              <div class="page__content">
+
+                <h1 class="page__content-title">Synopsis</h1>
+                <div class="page__content-blockquote">
+                  <p class="page__content-blockquote-text"></p>
+                  <p class="page__content-blockquote-text">${book.genre} </p>
+                  <p class="page__content-blockquote-text">${book.synopsis}</p>
+                  <span class="page__content-blockquote-reference"></span>
+                </div>
+                <div class="page__content-text">
+
+                </div>
+                <div class="page__number">3</div>
+              </div>
+            </label>
+
+
+
+            <label id="books-changing1" class="book__page book__page--2">
+              <div class="book__page-front">
+
+                <div class="page__content">
+                  <p>$${book.price} </p>
+                  <h1 class="page__content-book-title">Foundation</h1>
+                  <h2 class="page__content-author">${book.author}</h2>
+                  <div class="page__content-copyright">
+                    <p>The Folio Society</p>
+                    <p>${book.publisher},
+                      ${book.publishDay}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="book__page-back">
+                <div class="page__content">
+                  <h1 class="page__content-title">Contents</h1>
+                  <table class="page__content-table">
+                    <tr>
+                      <td align="left">Part I</td>
+                      <td align="left">The Psycohistorians</td>
+
+                    </tr>
+                    <tr>
+                      <td align="left">Part II</td>
+                      <td align="left">The Encyclopedists</td>
+                    </tr>
+                  </table>
+                  <div class="page__number">2</div>
+                </div>
+              </div>
+            </label>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+  <hr>
+  <div class="footer-items">
+    <div class="footer-social-media">
+      <p>Social Media</p>
+
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-instagram"></a>
+      <a href="#" class="fa fa-twitter"></a>
+
+
+
+    </div>
+    <div class="footer-about-us">
+      <p>Information</p>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Meet With us</a>
+    </div>
+    <div class="footer-locations">
+      <p>Locations</p>
+      <a href="#">Baku,AFF Business house</a>
+      <a href="#">Baku,Ganjlik Mall</a>
+      <a href="#">Baku,Azadliq prospekti 45a</a>
+    </div>
+  </div>
+
+
+  <hr>
+  <p class="all-rights">All rights reserved by SomeOne &#169;</p>
+</footer>
+
+</html>

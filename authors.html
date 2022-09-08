@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://css.gg/close.css' rel='stylesheet'>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="./authors.js" defer></script>
+  <link rel="stylesheet" href="./styles/style.css" />
+  <title>AUTHORS</title>
+</head>
+
+<body>
+  <!-- Navigation Start -->
+  <header class="header">
+    <nav class="navbar_container">
+      <ul id="dashafter" class="nav_list">
+        <li class="nav_items"><a href="#">Authors</a></li>
+        <li class="nav_items"><a href="./books.html">Books</a></li>
+        <a href="./index.html" id="imagenav"> <img id="navimg" src="./images/logonav.png" alt=""></a>
+      </ul>
+      <i id="signin-btn" class="fa fa-user-o" aria-hidden="true"></i>
+      </i><i id="signin-btn" class="fa fa-log-out"></i>
+      <i id="sign-out-btn" class="fa fa-sign-out" aria-hidden="true"></i>
+    </nav>
+    <nav class="mobile_navbar_container">
+      <ul class="mobile_navbar_list">
+        <li class="mobile_nav_items">
+          <a class="menu_button" onclick="openMenu(this)">
+            <div class="line1"></div>
+            <div class="line2"></div>
+          </a>
+        </li>
+
+        </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="expansionMenu">
+      <div class="searchBar_Container">
+      </div>
+      <div class="mobile_item_menu_container">
+        <ul class="mobile_item_menu">
+
+          <li class="mobile_menu_items">
+            <a href="./authors.html" class="mobile_menu_item_links">Authors</a>
+          </li>
+          <li class="mobile_menu_items">
+            <a href="./books.html" class="mobile_menu_item_links">Books</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation bar end -->
+
+
+  <div class="wrapper">
+    <div class="loader-author">
+      <div class="inner one"></div>
+      <div class="inner two"></div>
+      <div class="inner three"></div>
+    </div>
+    <div class="main">
+      <div id="login-menu" class="form-structor">
+        <i id="logclose-btn" onclick="closeLoginMenu()" class="gg-close"></i>
+        <div class="signup">
+          <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
+          <div class="form-holder">
+            <form id="user-form-signup">
+              <input type="text" class="input" placeholder="Name" />
+              <input type="email" class="input" placeholder="Email" />
+              <input type="password" class="input" placeholder="Password" />
+            </form>
+
+          </div>
+          <button id="signbtn-sbmt" class="submit-btn">Sign up</button>
+        </div>
+        <div class="login slide-up">
+          <div class="center">
+            <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+            <div class="form-holder">
+              <form id="user-form-login">
+                <input id="mail" type="email" class="input" placeholder="Email" />
+                <input id="pass" type="password" class="input" placeholder="Password" />
+              </form>
+
+            </div>
+            <button type="submit" id="login-sbmt-btn" class="submit-btn">Log in</button>
+          </div>
+        </div>
+      </div>
+      <div class="main-container">
+        <div id="auth-modal" class="modal-author-info">
+        </div>
+
+        <div id="author-container" class="main-authors"></div>
+
+
+      </div>
+    </div>
+  </div>
+  <footer>
+
+    <div class="footer-items">
+      <div class="footer-social-media">
+        <p>Social Media</p>
+
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-twitter"></a>
+
+
+
+      </div>
+      <div class="footer-about-us">
+        <p>Information</p>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Meet With us</a>
+      </div>
+      <div class="footer-locations">
+        <p>Locations</p>
+        <a href="#">Baku,AFF Business house</a>
+        <a href="#">Baku,Ganjlik Mall</a>
+        <a href="#">Baku,Azadliq prospekti 45a</a>
+      </div>
+    </div>
+
+
+    <hr>
+    <p class="all-rights">All rights reserved by SomeOne &#169;</p>
+  </footer>
+</body>
+
+</html>
