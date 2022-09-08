@@ -87,34 +87,43 @@ signinbtnsbmt.addEventListener("click", () => {
 })
 
 loginbtnsbmt.addEventListener("click", (e) => {
-  e.preventDefault()
   setTimeout(() => {
-    userresponse.then((userlogin) =>
-      userlogin.filter((users) => {
-        const loginemail = document.getElementById("mail").value
-        const loginpassword = document.getElementById("pass").value
-
-        if (users.mail === loginemail && users.password === loginpassword) {
-          enteredusers.push({
-            mail: `${loginemail}`,
-            password: `${loginpassword}`,
-          })
-
-          localStorage.setItem("User", JSON.stringify(enteredusers))
-          loginmenu.style.display = none
-          signbtn.style.display = none
-          signoutbtn.style.display = block
-
-          return console.log("YOU ENTERED")
-        } else {
-          loginBtn.innerHTML = "Account wasn't found"
-          location.reload()
-          return console.log("WRONG MAIL OR PASSWORD")
-        }
-      })
-    )
     loginBtn.innerHTML = "Logining..."
-  }, 3000)
+  }, 3000);
+  e.preventDefault()
+  userresponse.then((userlogin) =>
+    userlogin.filter((users) => {
+      const loginemail = document.getElementById("mail").value
+      const loginpassword = document.getElementById("pass").value
+
+      if (users.mail == loginemail && users.password == loginpassword) {
+        {
+          setTimeout(() => {
+            loginBtn.innerHTML = "Successfull..."
+          }, 2000)
+        }
+        enteredusers.push({
+          mail: `${loginemail}`,
+          password: `${loginpassword}`,
+
+        })
+
+
+        localStorage.setItem("User", JSON.stringify(enteredusers))
+        loginmenu.style.display = none
+        signbtn.style.display = none
+        signoutbtn.style.display = block
+
+        return console.log("YOU ENTERED")
+      } else {
+        loginBtn.innerHTML = "Account wasn't found"
+        location.reload()
+        return console.log("WRONG MAIL OR PASSWORD")
+      }
+    })
+  )
+
+
 })
 
 loginmenu.style.display = none

@@ -87,7 +87,7 @@
     position: fixed;
     z-index: 9999;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: var(--global-navbar-color-primary);
     height: 3rem;
     font-size: 0.8rem;
@@ -322,7 +322,7 @@
 }
 
 #container {
-  background-color: rgba(53, 39, 67, 0.8);
+  background-color: rgba(98, 70, 125, 0.8);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -416,7 +416,7 @@ label {
 }
 
 #edit-container {
-  background-color: rgba(53, 39, 67, 0.992);
+  background-color: rgba(78, 51, 106, 0.992);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -466,7 +466,7 @@ label {
 }
 
 #book-container {
-  background-color: rgba(54, 38, 71, 0.992);
+  background-color: rgba(136, 136, 136, 0.992);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -474,8 +474,8 @@ label {
   border-radius: 10px;
   padding: 2% 2% 2%;
   position: absolute;
-  top: 33.3%;
-  left: -50%;
+  top: 27.5%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 #book-container button {
@@ -485,7 +485,7 @@ label {
 }
 #book-container input {
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 60px;
 }
 #book-container textarea {
   max-width: 500px;
@@ -508,9 +508,16 @@ label {
 
 #book-form-closer {
   position: absolute;
+  font-size: 30px;
   top: 50px;
   right: 70px;
   color: white;
+  cursor: pointer;
+  transition: transform ease 0.4s;
+}
+
+#book-form-closer:active {
+  transform: rotate(-180deg);
 }
 
 .dashboard-books-main {
@@ -520,6 +527,18 @@ label {
 
 .books-main-container {
   padding-top: 100px;
+  width: 100%;
+}
+
+.textarea-book-add-design {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.textarea-book-add-design label {
   width: 100%;
 }
 
