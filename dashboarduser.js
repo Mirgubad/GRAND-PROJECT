@@ -8,7 +8,7 @@ const userresponse = fetch("http://localhost:3000/api/users").then((response) =>
   response.json()
 )
 
-const loaderauthor = document.querySelector(".loader-author")
+const loaderDashMenu = document.querySelector(".loader-dashboard")
 const mainauthor = document.getElementById("author-container")
 const modalescbtn = document.getElementById("close-btn")
 const modalauthor = document.getElementById("auth-modal")
@@ -223,8 +223,13 @@ renderAuthorList();
 function renderAuthorList() {
   dashtableauthors.innerHTML = ""
   const deleted = document.getElementById("delete")
+  setTimeout(() => {
+    loaderDashMenu.style.display = "none"
+
+  }, 2000);
   axios.get("http://localhost:3000/api/users")
     .then(author => author.data.map(info => {
+
       function deleteAuthor() {
         axios.delete(`http://localhost:3000/api/authors/${info.id}`)
           .then(response => console.log(response))

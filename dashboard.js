@@ -6,6 +6,7 @@ const userresponse = fetch("http://localhost:3000/api/users").then((response) =>
 )
 
 const loaderauthor = document.querySelector(".loader-author")
+const loaderDashMenu = document.querySelector(".loader-dashboard")
 const mainauthor = document.getElementById("author-container")
 const modalescbtn = document.getElementById("close-btn")
 const modalauthor = document.getElementById("auth-modal")
@@ -192,6 +193,7 @@ function renderAuthorList() {
   dashtableauthors.innerHTML = ""
   axios.get("http://localhost:3000/api/authors")
     .then(author => author.data.map(info => {
+      loaderDashMenu.style.display = "none"
       const authorRow = `
     <tr>
     <td>${info.id}</td>

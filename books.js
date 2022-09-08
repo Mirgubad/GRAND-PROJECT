@@ -26,8 +26,10 @@ loginmenu.style.display = none
 fetcheddatabookspage.then((data) => {
   data.map((book) => {
     setTimeout(() => {
-      const bookspagelist =
-        `
+      loader.style.display = "none"
+    }, 2000);
+    const bookspagelist =
+      `
         <div class="book">
           <button onclick="changePageLeft(${book.id})" id="changebtnleft"></button>
            <button onclick="changePageRight(${book.id})" id="changebtnright"></button>
@@ -87,10 +89,10 @@ fetcheddatabookspage.then((data) => {
         </div>
 
 `
-      booksheader.style.display = "block"
-      loader.style.display = "none"
-      bookscontainer.insertAdjacentHTML("beforeend", bookspagelist)
-    }, 500)
+    booksheader.style.display = "block"
+
+    bookscontainer.insertAdjacentHTML("beforeend", bookspagelist)
+
   })
 })
 

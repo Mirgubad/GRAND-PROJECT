@@ -87,17 +87,13 @@ fetchedAuthors.then((data) => {
   data.map((author, index) => {
     console.log(author)
     if (index < 4) {
+
       const authorList = `
-     
     
     <div id="${author.id}">
     <img id="auth-img" src="${author.imgUrl}" alt="Eleanor from The Good Place" />
-  </div>
-    
-    
-    
+    </div>
     `
-
       mainauthor.insertAdjacentHTML("beforeend", authorList)
     }
   })
@@ -108,10 +104,12 @@ fetchedAuthors.then((data) => {
 
 fetcheddata.then((data) =>
   data.map((book, index) => {
-    console.log(book)
+
+
 
     setTimeout(() => {
       if (index < 4) {
+        loader.style.display = none
         const bookList = `
         <div class="card">
             <div><a class="title"><img class="head-book-img" src="${book.imageUrl}" alt=""></a>
@@ -119,11 +117,12 @@ fetcheddata.then((data) =>
           </div>
         
         `
-        // loader.style.display = none
         carousel.insertAdjacentHTML("beforeend", bookList)
       }
-    }, 500)
+    }, 2000)
+
   })
+
 )
 
 const openMenu = (menu) => {

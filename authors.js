@@ -11,18 +11,21 @@ const modalauthor = document.getElementById("auth-modal")
 
 
 fetchedAuthors.then((data) => {
+  setTimeout(() => {
+    loaderauthor.style.display = "none"
+  }, 2000);
   data.map((author) => {
     console.log(author)
-    setTimeout(() => {
-      const authorList = `
+
+    const authorList = `
    <div id="${author.id}" onclick="myFunction(id)" class="author-cards__item" >
 <img id="booksauth" src="${author.imgUrl} ">
 <p>${author.name}</p>
 </div>`
 
-      loaderauthor.style.display = "none"
-      mainauthor.insertAdjacentHTML("beforeend", authorList)
-    }, 300)
+
+    mainauthor.insertAdjacentHTML("beforeend", authorList)
+
   })
 })
 function myFunction(id) {

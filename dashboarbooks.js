@@ -7,7 +7,6 @@ const userresponse = fetch("http://localhost:3000/api/users").then((response) =>
     response.json()
 )
 
-const loaderauthor = document.querySelector(".loader-author")
 const mainauthor = document.getElementById("author-container")
 const modalescbtn = document.getElementById("close-btn")
 const modalauthor = document.getElementById("auth-modal")
@@ -63,6 +62,7 @@ const signbtn = document.getElementById("signin-btn")
 const signinbtnsbmt = document.getElementById("signbtn-sbmt")
 const loginbtnsbmt = document.getElementById("login-sbmt-btn")
 const signoutbtn = document.getElementById("sign-out-btn")
+const loaderDashMenu = document.querySelector(".loader-dashboard")
 const enteredusers = []
 const userinfo = JSON.parse(localStorage.getItem("User"))
 
@@ -203,10 +203,14 @@ renderDashBooksList();
 
 
 function renderDashBooksList() {
+    setTimeout(() => {
+        loaderDashMenu.style.display = "none"
+    }, 2000);
     dashtablebooks.innerHTML = ""
 
     axios.get("http://localhost:3000/api/books/")
         .then(author => author.data.map(info => {
+
             const authorRow = `     
       <tr>
       <td>${info.id}</td>
