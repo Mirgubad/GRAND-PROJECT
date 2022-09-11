@@ -65,7 +65,7 @@ const signinbtnsbmt = document.getElementById("signbtn-sbmt")
 const loginbtnsbmt = document.getElementById("login-sbmt-btn")
 const signoutbtn = document.getElementById("sign-out-btn")
 const dashboard = document.getElementById("dashboard")
-dashboard.style.display = none
+// dashboard.style.display = none
 const enteredusers = []
 const userinfo = JSON.parse(localStorage.getItem("User"))
 
@@ -179,7 +179,7 @@ function logCheck() {
           userinfos.mail === check.mail &&
           userinfos.password === check.password
         ) {
-          dashboard.style.display = block
+          // dashboard.style.display = block
           signbtn.style.display = none
           signoutbtn.style.display = block
           console.log("Logged in")

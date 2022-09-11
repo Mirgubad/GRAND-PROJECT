@@ -39,17 +39,16 @@
             <!-- Navigation Start -->
             <header class="header">
                 <nav class="navbar_container">
-                    <ul class="nav_list">
+                    <ul id="dashafter" class="nav_list">
                         <li class="nav_items"><a href="./authors.html">Authors</a></li>
                         <li class="nav_items"><a href="./books.html">Books</a></li>
 
-                        <a href="./index.html" id="imagenav"> <img id="navimg" src="./images/logonav.png" alt=""></a>
-                        <li class="nav__items" id="dashboard"><a href="./dashboard.html">Dashboard </a></li>
-
                     </ul>
-                    <i id="signin-btn" class="fa fa-user-o" aria-hidden="true"></i>
-                    </i><i id="signin-btn" class="fa fa-log-out"></i>
-                    <i id="sign-out-btn" class="fa fa-sign-out" aria-hidden="true"></i>
+                    <a href="./index.html" id="imagenav"> <img id="navimg" src="./images/logonav.png" alt=""></a>
+                    <div> <i id="signin-btn" class="fa fa-user-o" aria-hidden="true"></i>
+                        </i>
+                        <i id="sign-out-btn" class="fa fa-sign-out" aria-hidden="true"></i>
+                    </div>
                 </nav>
                 <nav class="mobile_navbar_container">
                     <ul class="mobile_navbar_list">
@@ -180,6 +179,7 @@
             <div class="form-holder">
                 <form id="user-form-signup">
                     <input type="text" class="input" placeholder="Name" />
+                    <input id="surnameinput" type="text" class="input" placeholder="SurName" />
                     <input type="email" class="input" placeholder="Email" />
                     <input type="password" class="input" placeholder="Password" />
                 </form>

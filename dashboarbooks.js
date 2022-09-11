@@ -176,7 +176,7 @@ function logCheck() {
                     userinfos.mail === check.mail &&
                     userinfos.password === check.password
                 ) {
-                    dashboard.style.display = block
+
                     signbtn.style.display = none
                     signoutbtn.style.display = block
                     console.log("Logged in")
@@ -188,12 +188,12 @@ function logCheck() {
 
 
 
-function logOutCheck(userinfo) {
-    if (userinfo === null) {
+function logOutCheck() {
+    if (!localStorage.length) {
         location.href = "index.html"
     }
 }
-logOutCheck(userinfo)
+logOutCheck()
 signoutbtn.addEventListener("click", () => {
     location.reload()
     localStorage.removeItem("User")
@@ -251,6 +251,9 @@ const bookFormCloser = document.getElementById("book-form-closer")
 addBookBtn.addEventListener("click", (e) => {
     e.preventDefault()
     bookContainer.style.left = "50%"
+    const submitEditBook = document.getElementById("submit-new-book")
+    submitEditBook.addEventListener("click", publishBook)
+
 })
 bookFormCloser.addEventListener("click", () => {
     document.forms['book-add-form'].reset();
@@ -303,7 +306,6 @@ function publishBook() {
     }
     axios.post(`http://localhost:3000/api/books`, newBook)
 
-
 }
 
 
@@ -327,8 +329,6 @@ function editBook(id) {
 
                 books.data.genre.map(genre => (document.getElementById(`${genre}`).checked = true))
         })
-
-
 
     submitEditBook.addEventListener("click", (e) => {
         e.preventDefault()

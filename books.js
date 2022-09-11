@@ -202,25 +202,44 @@ signoutbtn.addEventListener("click", () => {
   localStorage.removeItem("User")
 })
 const dashmenucreater = document.getElementById("dashafter")
-function logCheck() {
-  userresponse.then((data) =>
-    data.map((check) => {
-      userinfo.find((userinfos) => {
-        if (
-          userinfos.mail === check.mail &&
-          userinfos.password === check.password
-        ) {
-          const dashmenu = `< li class="d" id="dashboard" > <a href="./dashboard.html">Dashboard </a></li >`
-          dashmenucreater.insertAdjacentHTML("beforeend", dashmenu)
-          signbtn.style.display = none
-          signoutbtn.style.display = block
-          console.log("Logged in")
-        }
-      })
-    })
-  )
+// function logCheck() {
+//   userresponse.then((data) =>
+//     data.map((check) => {
+//       userinfo.find((userinfos) => {
+//         if (
+//           userinfos.mail === check.mail &&
+//           userinfos.password === check.password
+//         ) {
+//           const dashmenu = `< li class="d" id="dashboard" > <a href="./dashboard.html">Dashboard </a></li >`
+//           dashmenucreater.insertAdjacentHTML("beforeend", dashmenu)
+//           signbtn.style.display = none
+//           signoutbtn.style.display = block
+//           console.log("Logged in")
+//         }
+//       })
+//     })
+//   )
+// }
+
+
+
+
+logCheck(enteredusers)
+
+
+function logCheck(arr) {
+  if (localStorage.length) {
+
+    const dashmenu = `<li class="nav__items" id="dashboard" > <a href="./dashboard.html">Dashboard </a></li >`
+    dashmenucreater.insertAdjacentHTML("beforeend", dashmenu)
+    signbtn.style.display = none
+    signoutbtn.style.display = block
+    // signoutbtn.innerHTML = `<a style="font-size: 15px; margin-bottom:5px;">${check.mail}</a>`
+    console.log("Logged in")
+  }
 }
-logCheck()
+
+
 function logOutCheck(userinfo) {
   if (userinfo === null) {
     location.href = "index.html"

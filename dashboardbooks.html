@@ -41,16 +41,16 @@
             <!-- Navigation Start -->
             <header class="header">
                 <nav class="navbar_container">
-                    <ul class="nav_list">
+                    <ul id="dashafter" class="nav_list">
                         <li class="nav_items"><a href="./authors.html">Authors</a></li>
                         <li class="nav_items"><a href="./books.html">Books</a></li>
-                        <li class="d" id="dashboard"><a href="./dashboard.html">Dashboard </a></li>
-                        <a href="./index.html" id="imagenav"> <img id="navimg" src="./images/logonav.png" alt=""></a>
 
                     </ul>
-                    <i id="signin-btn" class="fa fa-user-o" aria-hidden="true"></i>
-                    </i><i id="signin-btn" class="fa fa-log-out"></i>
-                    <i id="sign-out-btn" class="fa fa-sign-out" aria-hidden="true"></i>
+                    <a href="./index.html" id="imagenav"> <img id="navimg" src="./images/logonav.png" alt=""></a>
+                    <div> <i id="signin-btn" class="fa fa-user-o" aria-hidden="true"></i>
+                        </i>
+                        <i id="sign-out-btn" class="fa fa-sign-out" aria-hidden="true"></i>
+                    </div>
                 </nav>
                 <nav class="mobile_navbar_container">
                     <ul class="mobile_navbar_list">
@@ -86,56 +86,63 @@
                 <form id="book-add-form">
                     <i id="book-form-closer" class="fa fa-times" aria-hidden="true"></i>
                     <div id="input-design-add-book">
-
-                        <div class="input-book-add-design">
-                            <label for="name" id="title-label"><strong>Title</strong></label>
-                            <input type="text" id="add-book-title" name="name" placeholder="Enter Title"
-                                class="input-book-add" required />
+                        <div class="input-box">
+                            <div class="input-book-add-design">
+                                <label for="lname" id="author-label"><strong>Author</strong></label>
+                                <input type="text" id="add-book-author-name" name="lname"
+                                    placeholder="Enter Author name" class="input-book-add" required />
+                            </div>
+                            <div class="input-book-add-design">
+                                <label for="name" id="title-label"><strong>Title</strong></label>
+                                <input type="text" id="add-book-title" name="name" placeholder="Enter Title"
+                                    class="input-book-add" required />
+                            </div>
                         </div>
 
-                        <div class="input-book-add-design">
-                            <label for="lname" id="price-label"><strong>Price</strong></label>
-                            <input type="text" id="add-book-price" name="lname" placeholder="Enter Price"
-                                class="input-book-add" required />
+
+
+                        <div class="input-box">
+                            <div class="input-book-add-design">
+                                <label for="lname" id="price-label"><strong>Price</strong></label>
+                                <input type="text" id="add-book-price" name="lname" placeholder="Enter Price"
+                                    class="input-book-add" required />
+                            </div>
+                            <div class="input-book-add-design">
+                                <label for="lname" id="sold-label"><strong>Sold</strong></label>
+                                <input type="text" id="add-book-sold" name="lname" placeholder="Enter Sold pieces"
+                                    class="input-book-add" required />
+                            </div>
                         </div>
 
-                        <div class="input-book-add-design">
-                            <label for="lname" id="sold-label"><strong>Sold</strong></label>
-                            <input type="text" id="add-book-sold" name="lname" placeholder="Enter Sold pieces"
-                                class="input-book-add" required />
+                        <div class="input-box">
+                            <div class="input-book-add-design">
+                                <label for="lname" id="name-label"><strong>Photo Link</strong></label>
+                                <input type="text" id="add-book-photo-link" name="lname" placeholder="Photo Link"
+                                    class="input-book-add" required />
+                            </div>
+                            <div class="input-book-add-design">
+                                <label for="lname" id="name-label"><strong>Publisher</strong></label>
+                                <input type="text" id="add-book-publisher" name="lname"
+                                    placeholder="Enter Publsiher name" class="input-book-add" required />
+                            </div>
                         </div>
 
-                        <div class="input-book-add-design">
-                            <label for="lname" id="author-label"><strong>Author</strong></label>
-                            <input type="text" id="add-book-author-name" name="lname" placeholder="Enter Author name"
-                                class="input-book-add" required />
-                        </div>
+                        <div class="input-box">
 
-                        <div class="input-book-add-design">
-                            <label for="lname" id="name-label"><strong>Photo Link</strong></label>
-                            <input type="text" id="add-book-photo-link" name="lname" placeholder="Photo Link"
-                                class="input-book-add" required />
+                            <div class="input-book-add-design">
+                                <label for="lname" id="name-label"><strong>Publish Date</strong></label>
+                                <input type="text" id="add-book-publish-date" name="lname" placeholder="Publish Day"
+                                    class="input-book-add" required />
+                            </div>
+                            <div id="radio-input-book-add-design">
+                                <label>Cover Type</label><br>
+                                <label for="hard" id="cover-label1"><strong>Hard</strong></label>
+                                <input type="radio" id="hard" name="covertype" class="input-book-add" />
+                                <label for="soft" id="cover-label2"><strong>Soft</strong></label>
+                                <input type="radio" id="soft" name="covertype" placeholder="Enter Author name"
+                                    class="input-book-add" />
+                            </div>
                         </div>
-                        <div class="input-book-add-design">
-                            <label for="lname" id="name-label"><strong>Publisher</strong></label>
-                            <input type="text" id="add-book-publisher" name="lname" placeholder="Enter Publsiher name"
-                                class="input-book-add" required />
-                        </div>
-
-                        <div class="input-book-add-design">
-                            <label for="lname" id="name-label"><strong>Publish Date</strong></label>
-                            <input type="text" id="add-book-publish-date" name="lname" placeholder="Publish Day"
-                                class="input-book-add" required />
-                        </div>
-                        <div id="radio-input-book-add-design">
-                            <label>Cover Type</label><br>
-                            <label for="hard" id="cover-label1"><strong>Hard</strong></label>
-                            <input type="radio" id="hard" name="covertype" class="input-book-add" />
-                            <label for="soft" id="cover-label2"><strong>Soft</strong></label>
-                            <input type="radio" id="soft" name="covertype" placeholder="Enter Author name"
-                                class="input-book-add" />
-                        </div>
-
                     </div>
 
 
@@ -200,9 +207,6 @@
                             <input type="checkbox" id="animal-stories" name="genre" class="input-move">
                         </div>
                     </div>
-
-
-
                     <!--Button to submit information-->
 
 
@@ -212,6 +216,7 @@
                     <textarea id="book-synopsis" name="synopsis" placeholder="Enter synopsis here..."
                         class="input-book-add"></textarea>
                 </div>
+
                 <button type="submit" id="submit-new-book" value="submit">Submit</button>
             </div>
 
@@ -262,6 +267,7 @@
             <div class="form-holder">
                 <form id="user-form-signup">
                     <input type="text" class="input" placeholder="Name" />
+                    <input id="surnameinput" type="text" class="input" placeholder="SurName" />
                     <input type="email" class="input" placeholder="Email" />
                     <input type="password" class="input" placeholder="Password" />
                 </form>

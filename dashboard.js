@@ -76,7 +76,7 @@ const loginBtn = document.getElementById("login")
 const signupBtn = document.getElementById("signup")
 
 loginmenu.style.display = none
-dashboard.style.display = none
+// dashboard.style.display = none
 const enteredusers = []
 const userinfo = JSON.parse(localStorage.getItem("User"))
 
@@ -161,7 +161,7 @@ function logCheck() {
           userinfos.mail === check.mail &&
           userinfos.password === check.password
         ) {
-          dashboard.style.display = block
+          // dashboard.style.display = block
           signbtn.style.display = none
           signoutbtn.style.display = block
           console.log("Logged in")

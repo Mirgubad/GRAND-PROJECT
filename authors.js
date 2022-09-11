@@ -5,25 +5,30 @@ const userresponse = fetch("http://localhost:3000/api/users").then((response) =>
   response.json()
 )
 const loaderauthor = document.querySelector(".loader-author")
-const mainauthor = document.getElementById("author-container")
+const mainauthor = document.querySelector(".card__collection")
 const modalescbtn = document.getElementById("close-btn")
 const modalauthor = document.getElementById("auth-modal")
+
+
 
 
 fetchedAuthors.then((data) => {
   setTimeout(() => {
     loaderauthor.style.display = "none"
+
   }, 2000);
   data.map((author) => {
     console.log(author)
-
     const authorList = `
-   <div id="${author.id}" onclick="myFunction(id)" class="author-cards__item" >
-<img id="booksauth" src="${author.imgUrl} ">
-<p>${author.name}</p>
-</div>`
-
-
+   <div id="${author.id}" onclick="myFunction(id)" class="cards cards--two">
+   <img
+    src="${author.imgUrl}"
+    class="img-responsive" alt="Cards Image">
+  <span class="cards--two__rect"></span>
+  <span class="cards--two__tri"></span>
+  <p>${author.name}</p>
+  </div>
+`
     mainauthor.insertAdjacentHTML("beforeend", authorList)
 
   })
@@ -35,16 +40,20 @@ function myFunction(id) {
         modalauthor.innerHTML = ""
         const aboutauthor = `
         <i onclick="closeModal()" class="gg-close"></i>
-        <p id="name" >Name:</p>
-      <div>${auth.name}</div>
-      <p id="bio">Bio:</p>
-      <div>${auth.biography}</div>
+        <div>
+        <img id="auth-modal-img" src="${auth.imgUrl}">
+        <p id="name">Name:${auth.name}</p>
+     
+        <p id="bio">Bio:${auth.biography}</p>
+       </div>
+     
 
         `
-        document.body.style.overflow = "hidden"
+
         mainauthor.style.filter = "blur(2px)"
         modalauthor.style.display = "block"
         modalauthor.insertAdjacentHTML("beforeend", aboutauthor)
+        modalauthor.style.left = "50%"
       }
     })
   })
@@ -52,7 +61,7 @@ function myFunction(id) {
 function closeModal() {
   mainauthor.style.filter = "blur(0)"
   modalauthor.style.display = "none"
-  document.body.style.overflow = "auto"
+
 }
 
 const openMenu = (menu) => {
@@ -171,30 +180,39 @@ signoutbtn.addEventListener("click", () => {
   location.reload()
   localStorage.removeItem("User")
 })
-const dashmenucreater = document.getElementById("dashafter")
-function logCheck() {
-  userresponse.then((data) =>
-    data.map((check) => {
-      userinfo.find((userinfos) => {
-        if (
-          userinfos.mail === check.mail &&
-          userinfos.password === check.password
-        ) {
 
+loginbtnsbmt.addEventListener("click", (e) => {
+  loginBtn.innerHTML = "Logining..."
+  e.preventDefault()
+  const loginemail = document.getElementById("mail").value
+  const loginpassword = document.getElementById("pass").value
+  enteredusers.push({
+    mail: `${loginemail}`,
+    password: `${loginpassword}`
+  })
 
-          const dashmenu = `< li class="d" id="dashboard" > <a href="./dashboard.html">Dashboard </a></li >`
+  const loggedUser = {
+    mail: loginemail,
+    password: loginpassword
+  }
 
-          dashmenucreater.insertAdjacentHTML("beforeend", dashmenu)
-          signbtn.style.display = none
-          signoutbtn.style.display = block
-          console.log("Logged in")
-        }
-      })
-    })
-  )
-}
+  axios.post("http://localhost:3000/api/books/login", loggedUser)
+    .then(() => {
 
-logCheck()
+      loginBtn.innerHTML = `Logged Successfully`
+      setTimeout(() => {
+        localStorage.setItem("User", JSON.stringify(enteredusers))
+        loginmenu.style.display = none
+        signbtn.style.display = none
+        signoutbtn.style.display = block
+        location.reload()
+      }, 3000);
+
+    }
+    )
+    .catch(() => loginBtn.innerHTML = `Login Error`)
+})
+
 
 
 function logOutCheck(userinfo) {
@@ -207,3 +225,20 @@ signoutbtn.addEventListener("click", () => {
   location.reload()
   localStorage.removeItem("User")
 })
+
+
+logCheck()
+
+const dashmenucreater = document.getElementById("dashafter")
+function logCheck() {
+  if (localStorage.length) {
+    const dashmenucreater = document.getElementById("dashafter")
+
+    const dashmenu = `<li class="nav__items" id="dashboard" > <a href="./dashboard.html">Dashboard </a></li >`
+    dashmenucreater.insertAdjacentHTML("beforeend", dashmenu)
+    signbtn.style.display = none
+    signoutbtn.style.display = block
+    // signoutbtn.innerHTML = `<a style="font-size: 15px; margin-bottom:5px;">${check.mail}</a>`
+    console.log("Logged in")
+  }
+}
