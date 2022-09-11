@@ -72,64 +72,22 @@ function bookModalInfo(id) {
       const infoBook = `
       <img id="book-modal-img" src="${book.data.imageUrl}" alt="">
     <div>
-      <p>
+        <p>
         by ${book.data.author}
-      </p>
-      <p>
+       </p>
+       <p>
        ${book.data.publishDay}
-      </p>
-      <p>
+       </p>
+       <p>
        ${book.data.synopsis}
-      </p>
-</div>
+        </p>
+     </div>
   `
       bookInfoModal.insertAdjacentHTML("beforeend", infoBook)
       document.querySelector(".book-modal").style.top = "50%"
 
     })
-
-
-
-
 }
-
-
-// loginbtnsbmt.addEventListener("click", (e) => {
-//   loginBtn.innerHTML = "Logining..."
-//   e.preventDefault()
-
-//   setTimeout(() => {
-//     userresponse.then((userlogin) =>
-//       userlogin.filter((users) => {
-//         const loginemail = document.getElementById("mail").value
-//         const loginpassword = document.getElementById("pass").value
-
-//         if (users.mail === loginemail && users.password === loginpassword) {
-//           enteredusers.push({
-//             mail: `${loginemail}`,
-//             password: `${loginpassword}`,
-//           })
-
-//           localStorage.setItem("User", JSON.stringify(enteredusers))
-//           loginmenu.style.display = none
-//           signbtn.style.display = none
-//           signoutbtn.style.display = block
-//           location.reload()
-//           return true
-//         }
-//         if (!loginemail || !loginpassword) {
-//           loginBtn.innerHTML = "PLEASE FILL THE DATA!!!"
-//         }
-
-//         else {
-//           loginBtn.innerHTML = "Account wasn't found"
-//           return true
-//         }
-//       })
-//     )
-
-//   }, 3000)
-// })
 
 
 loginbtnsbmt.addEventListener("click", (e) => {
@@ -256,12 +214,11 @@ signoutbtn.addEventListener("click", () => {
   localStorage.removeItem("User")
 })
 const dashmenucreater = document.getElementById("dashafter")
-logCheck(enteredusers)
+logCheck()
 
 
-function logCheck(arr) {
+function logCheck() {
   if (localStorage.length) {
-
     const dashmenu = `<li class="nav__items" id="dashboard" > <a href="./dashboard.html">Dashboard </a></li >`
     dashmenucreater.insertAdjacentHTML("beforeend", dashmenu)
     signbtn.style.display = none
@@ -270,25 +227,6 @@ function logCheck(arr) {
     console.log("Logged in")
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const arr = []
 
@@ -301,16 +239,13 @@ axios.get("http://localhost:3000/api/books")
     sortedBooks.map(book => {
 
       const newbooklist = `
-  <div onclick= "bookModalInfo(${book.id})" class="top-books">
-  <div class="book-left">
-    <img id="main-book-img" src="${book.imageUrl}" alt="">
-  </div>
-  <div class="book-right">
-    <h3>${book.title}</h3>
-    <p>by ${book.author}</p>
-    <p>sold:${book.sold}</p>
-    <p>genre:${book.genre}</p>
-    <p>${book.synopsis}</p>
+  <div onclick= "bookModalInfo(${book.id})" >
+  <a class="books-container" target="_blank" rel="noreferrer noopener">
+            <div class="books">
+              <img alt="The Outstanding Developer by Sebastien Castiel"
+                src="${book.imageUrl}" />
+            </div>
+          </a>
   </div>
   </div>
   

@@ -2,7 +2,7 @@
 padding: 0;
 margin: 0;
 box-sizing: border-box;
-font-family: "San Francisco", -apple-system, BlinkMacSystemFont, "Segoe UI",
+font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI",
 Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -18,6 +18,12 @@ Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --global-text-color-primary: #f5f5f7;
   --global-navbar-color-primary: black;
   --global-navbar-gray-alpha: rgba(94, 90, 90, 0.692);
+}
+
+@font-face {
+  font-family: "Lora";
+  font-weight: 400;
+  src: url("../fonts/Lora-Italic-VariableFont_wght.ttf");
 }
 
 /* I might question legality of this shit */
@@ -282,15 +288,18 @@ Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1.1rem;
 }
 
-
 .main-container{
     padding-top: 90px;
     width: 100%;
-   
+    h1{
+     text-align: center;
+      padding-bottom: 20px;
+    }
 }
 
-.dashboard-main-container{
-    
+
+
+.dashboard-main-container{  
     padding-top: 100px;
     text-align: center;
     a{
@@ -321,6 +330,9 @@ Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   cursor: pointer;
 }
 
+
+
+
   #dasboard-table{
     width: 75%;
     padding-top:80px;
@@ -331,6 +343,26 @@ Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     h2{
         padding-bottom: 30px;
     }
+   
+    table{
+      box-sizing: border-box;
+      margin: 70px;
+      // border-color: rgb(0, 0, 0);
+      // border-collapse: collapse;
+      overflow-x:auto;
+      
+
+    }
+table,th,td{
+  border-color:white ;
+
+}
+th,td{
+  border-color:white ;
+  padding: 10px 20px;
+}
+
+    
     
   }
   #dashtable-add-btn{
@@ -346,6 +378,7 @@ Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
   
   #dashboarduser-table{
+   
     width: 75%;
     margin: auto;
     margin-top: 20px;
@@ -1245,6 +1278,7 @@ margin: auto;
     box-shadow: -1px 0px 10px;
     transition: transform .4s;
     cursor: pointer;
+    
 
   }
   #main-book-img:hover{
@@ -1968,6 +2002,7 @@ $color-box-7 : #363636;
     padding: 10px;
     font-family: 'Do Hyeon', sans-serif;
     overflow: hidden;
+    padding-bottom: 100px;
     
   .cards {
       width: 200px;
@@ -2365,4 +2400,98 @@ $color-box-7 : #363636;
     }
   }
  
+}
+
+
+
+.books-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 600px;
+}
+
+@keyframes initAnimation {
+  0% {
+    transform: rotateY(-28deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+.books {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: 1s ease;
+  animation: 1s ease 0s 1 initAnimation;
+  cursor: pointer;
+ 
+}
+
+.books:hover {
+  transform: rotateY(-28deg);
+}
+
+.books > :first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  width: 200px;
+  height: 300px;
+  transform: translateZ(25px);
+  background-color: #01060f;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 5px 5px 20px #666;
+}
+
+.books::before {
+  position: absolute;
+  content: ' ';
+  background-color: blue;
+  left: 0;
+  top: 3px;
+  width: 48px;
+  height: 294px;
+  transform: translateX(172px) rotateY(90deg);
+  background: linear-gradient(90deg, 
+    #fff 0%,
+    #f9f9f9 5%,
+    #fff 10%,
+    #f9f9f9 15%,
+    #fff 20%,
+    #f9f9f9 25%,
+    #fff 30%,
+    #f9f9f9 35%,
+    #fff 40%,
+    #f9f9f9 45%,
+    #fff 50%,
+    #f9f9f9 55%,
+    #fff 60%,
+    #f9f9f9 65%,
+    #fff 70%,
+    #f9f9f9 75%,
+    #fff 80%,
+    #f9f9f9 85%,
+    #fff 90%,
+    #f9f9f9 95%,
+    #fff 100%
+    );
+}
+
+.books::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: ' ';
+  width: 200px;
+  height: 300px;
+  transform: translateZ(-25px);
+  background-color: #01060f;
+  border-radius: 0 2px 2px 0;
+  box-shadow: -10px 0 50px 10px #666;
 }

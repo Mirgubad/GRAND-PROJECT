@@ -242,9 +242,9 @@ function renderAuthorList() {
     <td> ${info.name}</td>
     <td>${info.surname}</td>
     <td>${info.mail}</td>
-    <td onclick="myFunction(${info.id})" id="table-password-info"><i class="far fa-eye" id="togglePassword"></i>
+    <td onclick="myFunction(${info.id})" id="table-password-info">
     <input type="password" value="${info.password}" id="${info.id}">
-
+    <i class="far fa-eye" id="togglePassword"></i>
     </td>
     </td>
     </tr>
