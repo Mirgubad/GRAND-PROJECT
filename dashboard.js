@@ -271,6 +271,6 @@ function authEditOpener() {
 }
 editAuthCloser.addEventListener("click", (e) => {
   e.preventDefault()
-  editContainer.style.left = "-50%"
+  editContainer.style.left = "-150%"
 })
 

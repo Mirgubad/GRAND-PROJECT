@@ -257,7 +257,7 @@ addBookBtn.addEventListener("click", (e) => {
 })
 bookFormCloser.addEventListener("click", () => {
     document.forms['book-add-form'].reset();
-    bookContainer.style.left = "-50%"
+    bookContainer.style.left = "-150%"
 })
 
 

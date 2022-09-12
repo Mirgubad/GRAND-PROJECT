@@ -164,10 +164,11 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 9.5%;
+  top: 0.5%;
   width: 100%;
   height: 0%;
   transition: 400ms ease-in-out height;
+  z-index: 9999;
 }
 
 .searchBar_Container {
@@ -178,7 +179,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  height: 3.2rem;
+  height: 0.2rem;
 }
 
 #signin-btn,
@@ -320,16 +321,12 @@
   padding-bottom: 30px;
 }
 #dasboard-table table {
-  box-sizing: border-box;
+  border-color: transparent;
   margin: 70px;
   overflow-x: auto;
 }
-#dasboard-table table, #dasboard-table th, #dasboard-table td {
-  border-color: white;
-}
-#dasboard-table th, #dasboard-table td {
-  border-color: white;
-  padding: 10px 20px;
+#dasboard-table tr {
+  background: rgb(219, 216, 216);
 }
 
 #dashtable-add-btn {
@@ -345,7 +342,9 @@
 }
 
 #dashboarduser-table {
-  width: 75%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin: auto;
   margin-top: 20px;
   padding-bottom: 90px;
@@ -355,6 +354,9 @@
 }
 #dashboarduser-table a {
   color: black;
+}
+#dashboarduser-table table {
+  overflow: scroll;
 }
 
 #container {
@@ -369,7 +371,7 @@
   margin: auto;
   position: fixed;
   top: 55%;
-  left: -50%;
+  left: -150%;
   transform: translate(-50%, -50%);
   transition: left 0.5s;
 }
@@ -423,12 +425,12 @@
 }
 
 #dashboardbooks-table {
-  width: 80%;
   margin: 0 auto;
   padding-bottom: 90px;
 }
 #dashboardbooks-table td {
   padding: 5px;
+  background-color: rgb(203, 203, 203);
 }
 #dashboardbooks-table h2 {
   margin-bottom: 40px;
@@ -437,6 +439,9 @@
   color: black;
   font-size: 30px;
   padding-bottom: 20px;
+}
+#dashboardbooks-table table {
+  border-color: transparent;
 }
 
 #dashtable-add-book-btn {
@@ -499,7 +504,7 @@ label {
   margin: auto;
   position: fixed;
   top: 50%;
-  left: -50%;
+  left: -150%;
   transform: translate(-50%, -50%);
   transition: left 0.5s;
 }
@@ -548,7 +553,7 @@ label {
   padding: 2% 2% 2%;
   position: fixed;
   top: 52%;
-  left: -50%;
+  left: -150%;
   display: flex;
   gap: 10px;
   flex-direction: column;
@@ -1074,7 +1079,7 @@ svg {
 }
 
 .header-book {
-  width: 50%;
+  width: 60%;
   padding: 100px;
   font-size: 130%;
   color: #29323a;
@@ -1128,7 +1133,7 @@ svg {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: 60%;
+  height: 500px;
   background: linear-gradient(90deg, rgb(255, 253, 253) 0%, rgb(223, 226, 226) 44%, rgb(132, 134, 135) 50%, rgb(244, 244, 244) 90%);
   border-radius: 0px 20px;
   box-shadow: 1px 4px 20px 3px rgba(0, 0, 0, 0.86);
@@ -1157,11 +1162,11 @@ svg {
 }
 
 #book-modal-img {
-  width: 30%;
-  height: 80%;
+  width: 230px;
+  height: 350px;
   -o-object-fit: fill;
      object-fit: fill;
-  margin-top: 30px;
+  margin-top: 60px;
   position: absolute;
   border: 1.5px solid black;
   top: 50%;
@@ -1925,7 +1930,7 @@ svg {
   gap: 40px;
   justify-content: space-between;
   width: 80%;
-  margin: auto;
+  margin: 0 auto;
   padding: 10px;
   font-family: "Do Hyeon", sans-serif;
   overflow: hidden;
@@ -2331,4 +2336,44 @@ svg {
   background-color: #01060f;
   border-radius: 0 2px 2px 0;
   box-shadow: -10px 0 50px 10px #666;
+}
+
+@media (max-width: 1400px) {
+  .main-page-header {
+    width: 100%;
+    flex-direction: column;
+    margin: auto;
+  }
+  .main-page-header h1 {
+    font-size: 32px;
+  }
+  .container {
+    margin: auto;
+  }
+  .header-book {
+    width: 80%;
+    margin: auto;
+  }
+  .main-body-container {
+    width: 70%;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  .card__collection {
+    width: 80%;
+    margin: auto;
+  }
+  #books-container {
+    width: 85%;
+  }
+}
+@media (max-width: 1240px) {
+  #books-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .book {
+    max-width: inherit;
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=style.css.map */
