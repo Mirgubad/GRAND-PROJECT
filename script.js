@@ -15,7 +15,7 @@ const loginmenu = document.getElementById("login-menu")
 const maincontainer = document.querySelector(".main-container")
 const carousel = document.querySelector(".container")
 const booksbox = document.querySelector(".main-body-container")
-const mainauthor = document.querySelector(".images-leaning")
+const mainauthor = document.querySelector(".authors")
 const loader = document.querySelector(".loader")
 const signbtn = document.getElementById("signin-btn")
 const signinbtnsbmt = document.getElementById("signbtn-sbmt")
@@ -133,9 +133,19 @@ fetchedAuthors.then((data) => {
 
     if (index < 4) {
       const authorList = `
-      <div  id="${author.id}">
-      <img id="auth-img" src="${author.imgUrl}" alt="authorimg" />
+     
+
+      <div class="auth-info">
+      <div class="auth-1"></div>
+      <div class="auth-2">
+        <img id="auth-photo" src="${author.imgUrl}" alt="">
+        <h3>${author.name}</h3>
       </div>
+
+    </div>
+
+
+
       `
       mainauthor.insertAdjacentHTML("beforeend", authorList)
     }

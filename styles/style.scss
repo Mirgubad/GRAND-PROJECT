@@ -32,9 +32,6 @@ font-family: "Lora",  "Helvetica Neue", sans-serif;
   src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
 
-
-
-
 #navimg{
     width: 200px;
     height: 50px;
@@ -143,7 +140,7 @@ font-family: "Lora",  "Helvetica Neue", sans-serif;
    
     content: "";
  position: absolute;
- background-color: rgb(234, 225, 120);
+ background-color: rgb(162, 131, 131);
  top:-5px;
  left: -8px;
  border-radius: 20px;
@@ -2735,4 +2732,87 @@ transition: transform 1s;
   -webkit-text-fill-color: transparent;
 background-clip: text;
 
+}
+.authors{
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-bottom: 100px;
+  
+  h2{
+    font-size: 32px;
+    width: 100%;
+  }
+
+}
+
+.auth-info{
+  // background-color: red;
+  width: 280px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid gray;
+ 
+  cursor: pointer;
+
+ margin-top: 50px;
+  h3{
+  
+   margin-top: 120px;
+  }
+
+  &:hover {
+    transform: rotate3d(180deg);
+   box-shadow: 2px 2px 10px 2px;
+   transition: box-shadow 0.3s ease-in-out;
+  }
+}
+
+.auth-1{
+  border: 1px solid black;
+  width: 100%;
+  height: 200px;
+ background: url(https://png.pngtree.com/thumb_back/fh260/background/20200731/pngtree-blue-carbon-background-with-sport-style-and-golden-light-image_371487.jpg);
+}
+
+.auth-2{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ position: relative;
+  
+}
+
+#auth-photo{
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 100%;
+  top: -100px;
+  left: 55px;
+  &:hover{
+    transform: scale(1.012);
+    animation: leaves 5s ease-in-out infinite alternate;
+    -webkit-animation: leaves 5s ease-in-out infinite alternate;
+    }
+  
+  
+}
+
+@keyframes leaves {
+  0% {
+      transform: scale(1.0);
+  }
+  100% {
+      transform: scale(1.1);
+  }
 }
