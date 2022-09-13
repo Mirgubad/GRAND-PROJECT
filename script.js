@@ -26,10 +26,13 @@ const bookInfoModal = document.querySelector(".book-modal-container")
 const bookModalCloseBtn = document.getElementById("book-modal-closebtn")
 const enteredusers = []
 const userinfo = JSON.parse(localStorage.getItem("User"))
+const seeBookBtn = document.getElementById("head-seebtn")
 
 
+seeBookBtn.addEventListener("click", () => {
+  location.href = "books.html"
 
-
+})
 
 
 signinbtnsbmt.addEventListener("click", (e) => {
@@ -153,7 +156,7 @@ fetcheddata.then((data) =>
             </div>
           </div>
           `
-        carousel.insertAdjacentHTML("beforeend", bookList)
+        // carousel.insertAdjacentHTML("beforeend", bookList)
       }
     }, 2000)
   })
@@ -239,15 +242,31 @@ axios.get("http://localhost:3000/api/books")
     sortedBooks.map(book => {
 
       const newbooklist = `
-  <div onclick= "bookModalInfo(${book.id})" >
-  <a class="books-container" target="_blank" rel="noreferrer noopener">
-            <div class="books">
-              <img alt="The Outstanding Developer by Sebastien Castiel"
-                src="${book.imageUrl}" />
-            </div>
-          </a>
+  
+
+  <div onclick= "bookModalInfo(${book.id}) class="discover-books">
+  <div class="discover-items">
+    <div><img height=401px width="283px"
+        src="${book.imageUrl}"
+        alt="">
+
+    </div>
+
   </div>
+  <div class="book-info">
+    <h3>${book.title}</h3>
+    <div class="star">
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+    </div>
+
+    <p>${book.price}$</p>
+    <button id="add-to-card">Add To Card</button>
   </div>
+</div>
   
     `
       booksbox.insertAdjacentHTML("beforeend", newbooklist)
