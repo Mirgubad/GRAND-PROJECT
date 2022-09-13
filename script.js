@@ -244,11 +244,11 @@ axios.get("http://localhost:3000/api/books")
       const newbooklist = `
   
 
-  <div onclick= "bookModalInfo(${book.id}) class="discover-books">
-  <div class="discover-items">
-    <div><img height=401px width="283px"
+  <div  class="discover-books">
+  <div  class="discover-items">
+    <div><a onclick= "bookModalInfo(${book.id})" ><img height=401px width="283px"
         src="${book.imageUrl}"
-        alt="">
+        alt="img"></a>
 
     </div>
 

@@ -32,7 +32,7 @@
 }
 #navimg {
   width: 200px;
-  height: 60px;
+  height: 50px;
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
@@ -101,7 +101,7 @@
     justify-content: space-around;
     background-color: white;
     box-shadow: 2px 2px 10px 1px;
-    height: 4rem;
+    height: 3rem;
     font-size: 0.8rem;
   }
   .nav_list {
@@ -1106,7 +1106,6 @@ svg {
 }
 
 .main-body-container {
-  padding-top: 100px;
   display: flex;
   width: 90%;
   margin: auto;
@@ -2381,12 +2380,17 @@ svg {
   position: absolute;
   top: 75%;
   left: 15%;
-  background-color: rgb(254, 19, 19);
-  padding: 10px 30px;
-  border-radius: 20px;
+  background-color: rgb(232, 26, 26);
+  padding: 13px 30px;
+  border-radius: 40px;
   font-size: 20px;
   cursor: pointer;
   border-color: transparent;
+  color: white;
+}
+#head-seebtn:hover {
+  background-color: #131313;
+  transition: background 0.9s ease;
 }
 
 .slogan-txt {
@@ -2413,6 +2417,11 @@ svg {
 }
 .head-info div:nth-child(2) {
   width: 160px;
+}
+.head-info:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 10px 1px;
+  transition: box-shadow 0.5s;
 }
 
 .section2 {
@@ -2447,6 +2456,7 @@ svg {
   flex-direction: column;
   gap: 20px;
   overflow: hidden;
+  cursor: pointer;
 }
 .new-rel button,
 .pre-order button,
@@ -2459,12 +2469,20 @@ svg {
   color: white;
   border-color: white;
   cursor: pointer;
+  transition: background 0.5s ease-in-out;
 }
 .new-rel button:hover,
 .pre-order button:hover,
 .best-seller button:hover {
   background-color: white;
   color: black;
+}
+.new-rel:hover img,
+.pre-order:hover img,
+.best-seller:hover img {
+  filter: brightness(90%);
+  transform: scale(1.021);
+  transition: transform 1s;
 }
 
 .img {
@@ -2483,7 +2501,12 @@ svg {
   height: 420px;
 }
 .discover-items img {
+  cursor: pointer;
   margin: 8px;
+}
+.discover-items img:hover {
+  filter: brightness(85%);
+  transition: filter 0.9s;
 }
 
 .book-info {
@@ -2512,6 +2535,7 @@ svg {
   background: black;
   color: white;
   border-color: black;
+  transition: background 0.4s;
 }
 
 .fa-star-o:hover {

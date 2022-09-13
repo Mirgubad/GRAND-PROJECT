@@ -37,7 +37,7 @@ font-family: "Lora",  "Helvetica Neue", sans-serif;
 
 #navimg{
     width: 200px;
-    height: 60px;
+    height: 50px;
     object-fit: cover;
     position: absolute;
     top: -6%;
@@ -110,7 +110,7 @@ font-family: "Lora",  "Helvetica Neue", sans-serif;
     justify-content: space-around;
     background-color: white;
     box-shadow: 2px 2px 10px 1px;
-    height: 4rem;
+    height: 3rem;
     font-size: .8rem;
     // overflow: hidden;
   }
@@ -1189,7 +1189,7 @@ margin: auto;
     font-size: 30px;
   }
   .main-body-container{
-    padding-top: 100px;
+    
     display: flex;
     width: 90%;
     margin: auto;
@@ -2564,12 +2564,20 @@ width: 80%;
   position: absolute;
   top: 75%;
   left: 15%;
-  background-color: rgb(254, 19, 19);
-  padding: 10px 30px;
-  border-radius: 20px;
+  background-color: rgb(232, 26, 26);
+  padding: 13px 30px;
+  border-radius: 40px;
   font-size: 20px;
   cursor: pointer;
   border-color: transparent;
+  color: white;
+
+
+  &:hover{
+    background-color: #131313;
+    transition: background .9s ease;
+    
+  }
 }
 .slogan-txt{
   width: 40%;
@@ -2598,6 +2606,12 @@ gap: 10px;
 div:nth-child(2){
   width: 160px;
 }
+
+&:hover{
+  cursor: pointer;
+ box-shadow: 2px 2px 10px 1px;
+ transition: box-shadow .5s;
+}
   
 }
 .section2{
@@ -2620,17 +2634,18 @@ margin-top: 80px;
   position: relative;
  width: 400px;
  height: 280px;
-border-radius: 25px;
-line-height: 30px;
-padding-top: 50px;
-padding-inline: 20px;
-color: white;
-display: flex;
-flex-direction: column;
-gap: 20px;
-overflow: hidden;
+ border-radius: 25px;
+ line-height: 30px;
+ padding-top: 50px;
+ padding-inline: 20px;
+ color: white;
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+ overflow: hidden;
+ cursor: pointer;
 
-button{
+ button{
   width: 150px;
   height: 55px;
   margin-bottom: 20px;
@@ -2639,13 +2654,22 @@ button{
   color: white;
   border-color: white;
   cursor: pointer;
+  transition: background .5s ease-in-out;
 
   &:hover{
     background-color: white;
     color:black;
+  
   }
+ 
 }
 
+
+&:hover img{
+filter: brightness(90%);
+transform:scale(1.021);
+transition: transform 1s;
+}
 
 
 }
@@ -2655,24 +2679,25 @@ button{
   left: 0;
   z-index: -1;
   img{
-   
     height: 320px;
-    filter:contrast(75%) ;
+    filter:contrast(75%) ; 
   }
- 
 }
 
 
 .discover-items{
-
   width: 300px;
   height: 420px;
   img{
-    // border: 1px solid rgb(218, 216, 216);
-margin: 8px;
-
+    cursor: pointer;
+    margin: 8px;
+  }
+  img:hover{
+    filter: brightness(85%);
+    transition: filter .9s;
   }
 }
+
 .book-info{
   margin-top: 20px;
   display: flex;
@@ -2681,7 +2706,6 @@ margin: 8px;
   align-items: center;
   gap: 5px;
  
-  
   button{
     width: 110px;
     height: 45px;
@@ -2700,6 +2724,7 @@ margin: 8px;
     background: black;
     color: white;
     border-color: black;
+    transition: background .4s;
   }
 }
 
